@@ -8,6 +8,7 @@ import Result1 from './cart/Result1'
 import Data from './land/APT'
 import BuyLand from './land/Buy'
 import Result2 from './land/Result2'
+import NotFound from './404'
 
 export default function Router() {
 
@@ -24,6 +25,8 @@ export default function Router() {
                     <Route path='/land' element={<Data />} />
                     <Route path='/land/buy' element={<BuyLand />} />
                     <Route path='/land/buy/result' element={<Result2 />} />
+
+                    <Route path='*' element={<NotFound />} />
                 </Routes>
             </BrowserRouter>
         </>
