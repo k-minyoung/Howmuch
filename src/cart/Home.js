@@ -13,11 +13,11 @@ export default function Home() {
     const ClientID = "otNcGBz9oSTcVxUilunF"
     const ClientSecret = "fB0CrCnoX1"
     const [data, setData] = useState([]);
-    const [item, setItem] = useState("");
+    const [item, setItem] = useState("모자");
     const shoppingData = async () => {
         const URL = "/api/v1/search/shop.json";
         await axios
-            .get(URL, {
+            .get(process.env.REACT_APP_DB_HOST + URL, {
                 params: {
                     query: item,
                     display: 50,
@@ -31,12 +31,12 @@ export default function Home() {
             .then((res) => setData(res.data.items))
             .catch((e) => { });
     };
+    console.log(data)
 
     useEffect(() => {
         shoppingData();
         // focusRef.current.focus();
     }, [item]);
-    console.log(data)
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
@@ -72,7 +72,7 @@ export default function Home() {
                 <div className="productContainer">
                     <div className="max-h-[34rem] max-w-[80rem] overflow-y-scroll" >
                         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                            {data.map((el) => {
+                            {data && data.map((el) => {
                                 const defaultTitle = el.title.replace(/<\/?b>/g, "");
                                 let title = el.title.replace(/<\/?b>/g, "");
                                 if (title.length > 30) {
