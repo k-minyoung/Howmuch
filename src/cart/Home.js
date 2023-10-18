@@ -15,7 +15,7 @@ export default function Home() {
     const [data, setData] = useState([]);
     const [item, setItem] = useState("모자");
     const shoppingData = async () => {
-        const URL = `/api/v1/search/shop.json?query=${item}`;
+        const URL = `/api/v1/search/shop.json?`;
         try {
             const response = await axios.get(process.env.REACT_APP_DB_HOST + URL, {
                 params: {
