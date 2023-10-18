@@ -20,7 +20,7 @@ export default function Home() {
         const shoppingData = async () => {
             const URL = '/api/v1/search/shop.json';
             try {
-                const response = await axios.get(process.env.REACT_APP_DB_HOST + URL, {
+                const response = await axios.get(URL, {
                     params: {
                         query: item,
                         display: 50,
