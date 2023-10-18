@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import { useDispatch } from "react-redux";
 import { ADD_CART } from "../store/cart";
-import { ClientID, ClientSecret } from "../apiInfo";
+
 
 // import './Home.css'
 
