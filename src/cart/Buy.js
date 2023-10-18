@@ -16,7 +16,7 @@ export default function Buy() {
 
     return (
         <>
-            <form className="max-w-md mx-auto mt-8 p-4 border rounded-md shadow-lg bg-white">
+            <form className="max-w-md mx-auto mt-8 p-4 border rounded-md shadow-lg bg-green-50">
                 <h3 className="text-2xl font-semibold mb-4 text-center">정보를 입력해주세요</h3>
                 <label htmlFor='age' className="text-lg">현재 나이</label><br />
                 <input type="number" name="age" id="age" value={age} onChange={(e) => setAge(e.target.value)} min={0} className="w-full py-2 px-4 mb-4 border rounded-md" /><br />
@@ -36,7 +36,7 @@ export default function Buy() {
                     bank: Number(bank) * 10000,
                     age: age,
                     daySave: daysave
-                }} className="block bg-green-500 text-white py-2 px-4 rounded-md text-center">
+                }} className="block bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md text-center">
                     계산해보기
                 </Link>
             </form>

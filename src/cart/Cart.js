@@ -27,7 +27,7 @@ export default function Cart() {
                         <div>
                             <span className="text-xl font-semibold  text-white mr-4">총 {addCommaPrice}원 </span>
                             <Link to='/shopping/buy'>
-                                <button className=" bg-white text-green-500 text-2xl font-bold px-4 py-2 rounded-md"> 구매</button>
+                                <button className=" bg-white text-green-500 hover:opacity-90 text-2xl font-bold px-4 py-2 rounded-md"> 구매</button>
                             </Link>
                         </div>
                     </div>

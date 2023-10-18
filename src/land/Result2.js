@@ -13,7 +13,7 @@ export default function Result2() {
 
     return (
         <>
-            <div>선택하신 주택은...</div>
+
             {Land.map((value) => {
 
                 const totalPrice = value.obj_amt * 10000
@@ -64,21 +64,33 @@ export default function Result2() {
                 buyAge = buyAge.toFixed(0)
 
                 return (
-                    <div key={key}>
-                        <div>건물명 : {value.bldg_nm}</div>
-                        <h2>매매가 (한 층) : {addCommaPrice}</h2>
-                        <span>지역 : {value.rdealer_lawdnm} {value.bjdong_nm}</span><br />
-                        <span>면적 : {value.bldg_area}㎡ / {result}평 </span><br />
-                        <span>건축년도 : {value.build_year}</span>
-                        <hr />
-                        <div>구매까지 필요한 금액</div>
-                        <span>{priceComma}원 😱</span>
-                        <div>월 {month2}원 저축으로는..</div>
-                        <span>{year} {yearRest} 살 수 있네요</span>
-                        <div>구입하실 때 나이..</div>
-                        <span>{buyAge}세</span>
+                    <div className="flex justify-center">
+                        <div key={key} className="w-80 p-4 mt-4 border border-black rounded-lg shadow-lg bg-white text-black flex flex-col justify-center items-center">
+
+                            <div className="text-4xl font-bold text-center mb-2 border border-black border-2 p-4">{value.bldg_nm}</div>
+                            <div className="text-xl text-center">매매가 (한 층)</div>
+                            <div className="text-3xl font-bold text-center">{addCommaPrice}원</div>
+                            <div className="flex flex-col justify-between ">
+                                <p>지역: {value.rdealer_lawdnm} {value.bjdong_nm}</p>
+                                <p>면적: {value.bldg_area}㎡ / {result}평</p>
+                                <p>건축년도: {value.build_year}</p>
+                            </div>
+                            <div className="border-dotted w-80 border-2 bg-black mb-3 mt-3"></div>
+                            <div className="text-xl  text-center bg-yellow-400 p-1">구매까지 필요한 금액</div>
+                            <div className="text-2xl font-bold text-center">{priceComma}원 😱</div>
+                            <div className="text-xl  text-center bg-yellow-400 p-1 mt-4">월 {month2} 원 저축으로는</div>
+                            <div className="text-2xl font-semibold text-center">{year} {yearRest} </div>
+                            <div className="text-xl">살 수 있어요</div>
+                            <div className="text-xl  text-center bg-yellow-400 p-1 mt-4">구입하실 때 나이</div>
+                            <div className="text-2xl font-semibold text-center">{buyAge}세</div>
+                            <a href='/'>
+                                <button className="bg-blue-500 hover:bg-blue-600 text-white p-2 font-semibold mt-2">메인으로</button>
+                            </a>
+                        </div>
                     </div>
-                )
+                );
+
+
             })}
         </>
     )

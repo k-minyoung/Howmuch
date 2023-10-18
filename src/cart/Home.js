@@ -56,7 +56,7 @@ export default function Home() {
             <form onSubmit={handleOnSubmit} className="mb-4">
                 <div className="flex items-center ">
                     <input
-                        className="border rounded-md px-9 py-2 w-2/3"
+                        className="border rounded-md px-9 py-2 w-2/3 bg-green-50"
                         type="text"
                         placeholder="제품명"
                         name="title"
@@ -68,7 +68,7 @@ export default function Home() {
             </form>
             <section>
                 <div className="productContainer">
-                    <div className="max-h-[35rem] max-w-[80rem] overflow-y-scroll" >
+                    <div className="max-h-[34rem] max-w-[80rem] overflow-y-scroll" >
                         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                             {data.map((el) => {
                                 const defaultTitle = el.title.replace(/<\/?b>/g, "");

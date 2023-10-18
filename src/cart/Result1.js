@@ -64,7 +64,7 @@ export default function Result1() {
 
     return (
         <div className="flex justify-center">
-            <div className="m-4 pt-4 pr-4 pl-4 pb-2 border rounded-md bg-white shadow-md max-w-sm text-center">
+            <div className="m-4 pt-4 pr-4 pl-4 pb-2 border  rounded-md bg-white shadow-md max-w-sm text-center">
                 <div className="">
                     <h2 className="text-3xl font-semibold text-center mb-4">How Much</h2>
                     <div className="border-solid border border-black mb-3"></div>
