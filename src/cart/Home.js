@@ -16,8 +16,8 @@ export default function Home() {
     const [item, setItem] = useState("모자");
     const shoppingData = async () => {
         const URL = "/api/v1/search/shop.json";
-        await axios
-            .get(process.env.REACT_APP_DB_HOST + URL, {
+        try {
+            const response = await axios.get(process.env.REACT_APP_DB_HOST + URL, {
                 params: {
                     query: item,
                     display: 50,
@@ -25,13 +25,14 @@ export default function Home() {
                 headers: {
                     "X-Naver-Client-Id": ClientID,
                     "X-Naver-Client-Secret": ClientSecret,
-
                 },
-            })
-            .then((res) => setData(res.data.items))
-            .catch((e) => { });
+            });
+            setData(response.data.items);
+            console.log(response.data.items);
+        } catch (error) {
+            console.log(error)
+        }
     };
-    console.log(data)
 
     useEffect(() => {
         shoppingData();
