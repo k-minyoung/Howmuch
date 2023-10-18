@@ -14,29 +14,30 @@ export default function Home() {
     const ClientSecret = "fB0CrCnoX1"
     const [data, setData] = useState([]);
     const [item, setItem] = useState("모자");
-    const shoppingData = async () => {
-        const URL = `/api/v1/search/shop.json?`;
-        try {
-            const response = await axios.get(process.env.REACT_APP_DB_HOST + URL, {
-                params: {
-                    query: item,
-                    display: 50,
-                },
-                headers: {
-                    "X-Naver-Client-Id": ClientID,
-                    "X-Naver-Client-Secret": ClientSecret,
-                },
-            });
-            setData(response.data.items);
-            console.log(response.data.items);
-        } catch (error) {
-            console.log(error)
-        }
-    };
-
     useEffect(() => {
+
+
+        const shoppingData = async () => {
+            const URL = '/api/v1/search/shop.json';
+            try {
+                const response = await axios.get(process.env.REACT_APP_DB_HOST + URL, {
+                    params: {
+                        query: item,
+                        display: 50,
+                    },
+                    headers: {
+                        "X-Naver-Client-Id": ClientID,
+                        "X-Naver-Client-Secret": ClientSecret,
+                    },
+                });
+                setData(response.data.items);
+                console.log(response.data.items);
+            } catch (error) {
+                console.log(error)
+            }
+        };
+
         shoppingData();
-        // focusRef.current.focus();
     }, [item]);
 
     const handleOnSubmit = (e) => {
