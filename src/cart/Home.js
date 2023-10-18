@@ -25,6 +25,7 @@ export default function Home() {
                 headers: {
                     "X-Naver-Client-Id": ClientID,
                     "X-Naver-Client-Secret": ClientSecret,
+
                 },
             })
             .then((res) => setData(res.data.items))
@@ -71,7 +72,7 @@ export default function Home() {
                 <div className="productContainer">
                     <div className="max-h-[34rem] max-w-[80rem] overflow-y-scroll" >
                         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                            {data && data.map((el) => {
+                            {data.map((el) => {
                                 const defaultTitle = el.title.replace(/<\/?b>/g, "");
                                 let title = el.title.replace(/<\/?b>/g, "");
                                 if (title.length > 30) {
