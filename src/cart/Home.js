@@ -15,7 +15,7 @@ export default function Home() {
     const [data, setData] = useState([]);
     const [item, setItem] = useState("");
     const shoppingData = async () => {
-        const URL = "/v1/search/shop.json";
+        const URL = "/api/v1/search/shop.json";
         await axios
             .get(URL, {
                 params: {
