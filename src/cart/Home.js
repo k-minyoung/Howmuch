@@ -28,6 +28,7 @@ export default function Home() {
                     headers: {
                         "X-Naver-Client-Id": ClientID,
                         "X-Naver-Client-Secret": ClientSecret,
+                        'Access-Control-Allow-Origin': '*'
                     },
                 });
                 setData(response.data.items);
