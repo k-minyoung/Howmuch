@@ -9,7 +9,7 @@ import ReactDom from 'react-dom';
 import './tailwind.css';
 import './css/Global.css'
 
-ReactDom.render(<App />, document.querySelector('#root'))
+// ReactDom.render(<App />, document.querySelector('#root'))
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
