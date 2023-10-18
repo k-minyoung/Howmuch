@@ -4,11 +4,34 @@ import { useState, useEffect } from "react";
 
 import { useDispatch } from "react-redux";
 import { ADD_CART } from "../store/cart";
-
+import pianoImg from "../img/piano.png"
+import refImg from "../img/ref.png"
+import setakImg from "../img/setak.png"
 
 // import './Home.css'
 
 export default function Home() {
+
+    const data2 = [
+        {
+            productId: '1',
+            title: '야마하 그랜드 피아노 G3',
+            image: pianoImg,
+            lprice: 14000000
+        },
+        {
+            productId: '2',
+            title: 'LG SIGNATURE상냉장고',
+            image: refImg,
+            lprice: 9000000
+        },
+        {
+            productId: '3',
+            title: 'LG트롬F15SQAP',
+            image: setakImg,
+            lprice: 1200000
+        }
+    ]
 
     const ClientID = "otNcGBz9oSTcVxUilunF"
     const ClientSecret = "fB0CrCnoX1"
@@ -75,7 +98,7 @@ export default function Home() {
                 <div className="productContainer">
                     <div className="max-h-[34rem] max-w-[80rem] overflow-y-scroll" >
                         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                            {data && data.map((el) => {
+                            {data2 && data2.map((el) => {
                                 const defaultTitle = el.title.replace(/<\/?b>/g, "");
                                 let title = el.title.replace(/<\/?b>/g, "");
                                 if (title.length > 30) {
