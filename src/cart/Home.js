@@ -18,7 +18,7 @@ export default function Home() {
 
 
         const shoppingData = async () => {
-            const URL = '/api/v1/search/shop.json';
+            const URL = '/v1/search/shop.json';
             try {
                 const response = await axios.get(URL, {
                     params: {
