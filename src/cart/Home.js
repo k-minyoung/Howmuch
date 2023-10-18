@@ -10,7 +10,8 @@ import { ClientID, ClientSecret } from "../apiInfo";
 
 export default function Home() {
 
-
+    const ClientID = "otNcGBz9oSTcVxUilunF"
+    const ClientSecret = "fB0CrCnoX1"
     const [data, setData] = useState([]);
     const [item, setItem] = useState("아무것도 나오지 마라 ");
     const shoppingData = async () => {
