@@ -94,6 +94,9 @@ export default function Land({ data }) {
         setStatus(data)
         setFilterType(data)
         setFilterRegion(data)
+        document.querySelector('#select0').value = ""
+        document.querySelector('#select1').value = ""
+        document.querySelector('#select2').value = ""
     }
 
     return (
@@ -102,7 +105,7 @@ export default function Land({ data }) {
                 <div className="flex items-start mt-4 w-96 justify-between">
                     <div className="mb-4">
                         <div className="text-xl font-semibold">평수</div>
-                        <select onChange={(e) => handleSortChange(e.target.value)}>
+                        <select id="select0" onChange={(e) => handleSortChange(e.target.value)}>
                             <option value="">--선택--</option>
                             <option value="asc">올림차순</option>
                             <option value="desc">내림차순</option>
@@ -111,7 +114,7 @@ export default function Land({ data }) {
 
                     <div className="mb-4">
                         <div className="text-xl font-semibold">구분</div>
-                        <select onChange={(e) => filterDataType(e.target.value)}>
+                        <select id="select1" onChange={(e) => filterDataType(e.target.value)}>
                             <option value="">전체</option>
                             <option value="아파트">아파트</option>
                             <option value="연립다세대">다세대</option>
@@ -121,7 +124,7 @@ export default function Land({ data }) {
 
                     <div className="mb-4">
                         <div className="text-xl font-semibold">지역</div>
-                        <select onChange={(e) => filterDataGu(e.target.value)}>
+                        <select id="select2" onChange={(e) => filterDataGu(e.target.value)}>
                             <option value="">전체</option>
                             <option value="강남구">강남구</option>
                             <option value="강동구">강동구</option>
@@ -154,6 +157,7 @@ export default function Land({ data }) {
                         <button onClick={reset} className="text-5xl hover:opacity-80">🔄️</button>
                     </div>
                 </div>
+                <div className="text-lg font-semibold position : relative right-1/3">{status.length}개 찾음</div>
                 <div>
                     {status.map((value, idx) => {
                         const PY = Math.round(value.bldg_area)

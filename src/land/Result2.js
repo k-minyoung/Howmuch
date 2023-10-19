@@ -56,7 +56,7 @@ export default function Result2() {
                 } else if (yearRest === 1) {
                     yearRest = "다음 달에"
                 } else {
-                    yearRest = yearRest + "개월 후"
+                    yearRest = yearRest + "개월"
                 }
 
                 //구입 때 나이
@@ -65,9 +65,9 @@ export default function Result2() {
 
                 return (
                     <div className="flex justify-center">
-                        <div key={key} className="w-80 p-4 mt-4 border border-black rounded-lg shadow-lg bg-white text-black flex flex-col justify-center items-center">
+                        <div key={key} className="w-80 p-4 mt-4 bor border-black rounded-lg shadow-lg bg-white text-black flex flex-col justify-center items-center">
 
-                            <div className="text-4xl font-bold text-center mb-2 border border-black border-2 p-4">{value.bldg_nm}</div>
+                            <div className="text-4xl font-bold text-center mb-2  border-black p-4">{value.bldg_nm}</div>
                             <div className="text-xl text-center">매매가 (한 층)</div>
                             <div className="text-3xl font-bold text-center">{addCommaPrice}원</div>
                             <div className="flex flex-col justify-between ">
@@ -80,7 +80,7 @@ export default function Result2() {
                             <div className="text-2xl font-bold text-center">{priceComma}원 😱</div>
                             <div className="text-xl  text-center bg-yellow-400 p-1 mt-4">월 {month2} 원 저축으로는</div>
                             <div className="text-2xl font-semibold text-center">{year} {yearRest} </div>
-                            <div className="text-xl">살 수 있어요</div>
+                            <div className="text-xl">걸립니다</div>
                             <div className="text-xl  text-center bg-yellow-400 p-1 mt-4">구입하실 때 나이</div>
                             <div className="text-2xl font-semibold text-center">{buyAge}세</div>
                             <a href='/'>
