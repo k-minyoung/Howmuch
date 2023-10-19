@@ -36,7 +36,7 @@ export default function Home() {
     const ClientID = "otNcGBz9oSTcVxUilunF"
     const ClientSecret = "fB0CrCnoX1"
     const [data, setData] = useState([]);
-    const [item, setItem] = useState("모자");
+    const [item, setItem] = useState("ps5 ");
     useEffect(() => {
 
 
@@ -46,7 +46,7 @@ export default function Home() {
                 const response = await axios.get(URL, {
                     params: {
                         query: item,
-                        display: 50,
+                        display: 51,
                     },
                     headers: {
                         "X-Naver-Client-Id": ClientID,
@@ -96,13 +96,13 @@ export default function Home() {
             </form>
             <section>
                 <div className="productContainer">
-                    <div className="max-h-[34rem] max-w-[80rem] overflow-y-scroll" >
+                    <div className="max-h-[34rem] w-[75rem] overflow-y-scroll" >
                         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                            {data2 && data2.map((el) => {
+                            {data && data.map((el) => {
                                 const defaultTitle = el.title.replace(/<\/?b>/g, "");
                                 let title = el.title.replace(/<\/?b>/g, "");
                                 if (title.length > 30) {
-                                    title = title.slice(0, 50) + " ...";
+                                    title = title.slice(0, 30) + " ...";
                                 } else {
                                     title = title;
                                 }
@@ -123,7 +123,7 @@ export default function Home() {
                                                 <button onClick={() => addProduct(el)} className="bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-md">
                                                     담기
                                                 </button>
-                                                <span className="productPrice text-green-500 text-2xl font-bold">{addCommaPrice}₩</span>
+                                                <span className="productPrice text-green-500 text-2xl font-bold">{addCommaPrice}<span className="text-green-700">₩</span></span>
                                             </div>
                                         </li>
                                     </div>

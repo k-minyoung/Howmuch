@@ -25,7 +25,7 @@ export default function Buy() {
                 <label htmlFor='age' className="text-lg">현재 나이 </label><br />
                 <input type="number" name="age" id="age" value={age} onChange={(e) => setAge(e.target.value)} min={0} className="w-full py-2 px-4 mb-4 border rounded-md" /><br />
                 <label htmlFor='month' className="text-lg">월 저축액<span className="text-xs"> (단위 : 만원)</span> </label><br />
-                <input type="number" name="month" id="month" value={month} onChange={(e) => setMonth(e.target.value)} min={0} className="w-full py-2 px-4 mb-4 border rounded-md" /><br />
+                <input type="number" name="month" id="month" value={month} onChange={(e) => setMonth(e.target.value)} min={1} className="w-full py-2 px-4 mb-4 border rounded-md" /><br />
                 <label htmlFor='bank' className="text-lg">은행 잔고<span className="text-xs"> (단위 : 만원)</span> </label><br />
                 <input type="number" name="bank" id="bank" value={bank} onChange={(e) => setBank(e.target.value)} min={0} className="w-full py-2 px-4 mb-4 border rounded-md" /><br />
                 <Link to='/land/buy/result' state={{

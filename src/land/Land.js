@@ -157,7 +157,7 @@ export default function Land({ data }) {
                         <button onClick={reset} className="text-5xl hover:opacity-80">🔄️</button>
                     </div>
                 </div>
-                <div className="text-lg font-semibold position : relative right-1/3">{status.length}개 찾음</div>
+                <div className="text-lg font-semibold">{status.length}개 찾음</div>
                 <div>
                     {status.map((value, idx) => {
                         const PY = Math.round(value.bldg_area)
